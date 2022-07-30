@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsPipeService } from '../bs-pipe.service';
 
 @Component({
   selector: 'app-some-buttons',
@@ -6,14 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./some-buttons.component.scss']
 })
 export class SomeButtonsComponent implements OnInit {
+  bCount = 0;
 
-  constructor() { }
+  constructor(private bsPipe: BsPipeService) { }
 
   ngOnInit(): void {
   }
 
   redCircle() {
     console.log(`redCircle will do stuff.`);
+    this.bsPipe.send(this.bCount++);
   }
 
 }

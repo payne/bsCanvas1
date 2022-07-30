@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsPipeService } from '../bs-pipe.service';
 
 @Component({
   selector: 'app-canvas1',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Canvas1Component implements OnInit {
 
-  constructor() { }
+  constructor(private bsPipe: BsPipeService) { }
 
   ngOnInit(): void {
 	  const canvas:HTMLCanvasElement = <HTMLCanvasElement> document.getElementById('canvas2d')
@@ -19,6 +20,7 @@ export class Canvas1Component implements OnInit {
               ctx.fillRect(10, 10, 150, 100);
 	    }
 	  }
+     this.bsPipe.subject.subscribe( (v:number) => { console.log(`In canvas1 v=${v}`); } );
   }
 
 }
