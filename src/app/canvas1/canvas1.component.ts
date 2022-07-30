@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RectangleCommand } from '../data-types';
 import { BsPipeService } from '../bs-pipe.service';
 
 @Component({
@@ -20,7 +21,10 @@ export class Canvas1Component implements OnInit {
               ctx.fillRect(10, 10, 150, 100);
 	    }
 	  }
-     this.bsPipe.subject.subscribe( (v:number) => { console.log(`In canvas1 v=${v}`); } );
+     this.bsPipe.subject.subscribe( (v:RectangleCommand) => { 
+	     console.log(`In canvas1 v=${v}`); 
+	     console.log(v); 
+     });
   }
 
 }

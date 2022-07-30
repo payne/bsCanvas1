@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RectangleCommand } from '../data-types';
 import { BsPipeService } from '../bs-pipe.service';
 
 @Component({
@@ -16,7 +17,11 @@ export class SomeButtonsComponent implements OnInit {
 
   redCircle() {
     console.log(`redCircle will do stuff.`);
-    this.bsPipe.send(this.bCount++);
+    // this.bsPipe.send(this.bCount++);
+    const rCommand: RectangleCommand = { lx: 42, by: 72, command: 'draw' };
+    console.log(`About to send:`);
+    console.log(rCommand);
+    this.bsPipe.send(rCommand);
   }
 
 }

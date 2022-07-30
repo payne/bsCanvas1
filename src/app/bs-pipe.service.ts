@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { RectangleCommand } from './data-types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BsPipeService {
-  subject = new BehaviorSubject(0);
+  rc: RectangleCommand = { lx: 42, by: 88, command: 'noop' };
+  subject = new BehaviorSubject(this.rc);
   constructor() { 
   }
 
-  send(n: number) {
+  send(n: RectangleCommand) {
 	  this.subject.next(n);
   }
   
