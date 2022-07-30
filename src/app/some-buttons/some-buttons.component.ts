@@ -12,4 +12,8 @@ export class SomeButtonsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  redCircle() {
+    console.log(`redCircle will do stuff.`);
+  }
+
 }
