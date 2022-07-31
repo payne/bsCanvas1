@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RectangleCommand } from '../data-types';
-import { BsPipeService } from '../bs-pipe.service';
+// import { RectangleCommand } from '../data-types';
+// import { BsPipeService } from '../bs-pipe.service';
+import { RectangleCommand, BsPipeService } from '../bs-pipe.service';
 
 @Component({
   selector: 'app-some-buttons',
